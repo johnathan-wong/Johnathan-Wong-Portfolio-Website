@@ -26,8 +26,8 @@ def contact():
 
         send_simple_message(name, email, message)
 
-    # Render the contact form template
-    return render_template("index.html")
+    # Redirect to the home page
+    return redirect(url_for("home"))
 
 
 def send_simple_message(name, email, message):
