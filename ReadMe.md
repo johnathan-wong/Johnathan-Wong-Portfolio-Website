@@ -9,3 +9,5 @@ This is the portfolio website for me to showcase what I kind of projects I have 
 - [x] Host it on Azure
 - [ ] Replace placeholder image
 
+## Demo Page
+https://johnathanwong.azurewebsites.net/
