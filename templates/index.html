@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Johnathan Wong Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
@@ -17,8 +16,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-5">
     <div class="container-fluid">
       <a class="navbar-brand " href="#">Johnathan Wong</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar">
@@ -219,7 +217,7 @@
         <!-- Portfolio Items -->
         <div class="col-md-4 py-md-4">
           <div class="card neon-shadow">
-            <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+            <img src="{{ url_for('static', filename='img/QuestRealmAR.png') }}" class="card-img-top" alt="..." height="300">
             <div class="card-body">
               <h5 class="card-title text-center">Augmented Reality AI Chat Game</h5>
               <ul>
@@ -230,12 +228,15 @@
                 <li class="card-text mt-4">Implement AR technologies such as scene understanding for realistic occlusion
                   of virtual NPCs</li>
               </ul>
+              <form action="https://github.com/yakultproducer/InWorld-Project" class="row justify-content-center round-button card-detail">
+                <input type="submit" value="GitHub" />
+              </form>
             </div>
           </div>
         </div>
         <div class="col-md-4 py-4">
           <div class="card neon-shadow">
-            <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+            <img src="{{ url_for('static', filename='img/northstar.png') }}" class="card-img-top" alt="..." height="300">
             <div class="card-body">
               <h5 class="card-title text-center">NorthStar Bot</h5>
               <ul>
@@ -245,22 +246,32 @@
                   front-end</li>
                 <li class="card-text mt-4">Created several mini-games applying game logic such as minimax</li>
               </ul>
+              <form action="https://github.com/yakultproducer/BOT-NorthStar" class="row justify-content-center round-button card-detail">
+                <input type="submit" value="GitHub" />
+              </form>
             </div>
           </div>
         </div>
         <div class="col-md-4 py-4">
           <div class="card neon-shadow">
-            <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+            <img src="{{ url_for('static', filename='img/DrawingIdentifier.png') }}" class="card-img-top" alt="..." height="300">
             <div class="card-body">
-              <h5 class="card-title">Project 3</h5>
-              <p class="card-text">Description of project 3.</p>
+              <h5 class="card-title text-center">Drawing Identifier</h5>
+              <ul>
+                <li class="card-text mt-4">This is a interactive web application to let you visualize neural network model. </li>
+                <li class="card-text mt-4">Intergrated ConvnetJS that allow you to train your own neural network model within the website</li>
+                <li class="card-text mt-4">It included multiple pre-trained model allow user to test and visiualize</li>
+              </ul>
+              <form action="https://github.com/yakultproducer/Drawing-Identifier" class="row justify-content-center round-button card-detail">
+                <input type="submit" value="GitHub" />
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <div class="row justify-content-center round-button">
-        <button>Show More</button>
-      </div>
+      <form action="https://github.com/yakultproducer/My-RepoDirectory" class="row justify-content-center round-button card-detail">
+        <input type="submit" value="Show More" />
+      </form>
     </div>
   </section>
 
@@ -335,7 +346,7 @@
         <!-- right side -->
         <div class="col-lg-6">
           <div class="full-width">
-            <form id="contact-form" method="post" action="contact.php" novalidate="true">
+            <form id="contact-form" method="post" action="contact" novalidate="true">
 
               <div class="messages"></div>
 
@@ -344,14 +355,14 @@
                 <div class="col-lg-6">
                   <div class="form-group mb-3">
                     <label>Your Name</label>
-                    <input id="form_name" type="text" name="name" required="required">
+                    <input id="form_name" type="text" name="name" required>
                   </div>
                 </div>
 
                 <div class="col-lg-6">
                   <div class="form-group mb-3">
                     <label>Your Email</label>
-                    <input id="form_email" type="email" name="email" required="required">
+                    <input id="form_email" type="email" name="email" required>
                   </div>
                 </div>
 
@@ -359,7 +370,7 @@
                   <div class="form-group">
                     <label>Your Message</label>
 
-                    <textarea class="textbox"> </textarea>
+                    <textarea class="textbox" id="message" name="message" required></textarea>
                   </div>
                   <div class="mt-2 mb-4 round-button text-center">
                     <button type="submit" class="disabled">
@@ -382,9 +393,7 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 

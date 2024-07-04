@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import requests
 from dotenv import load_dotenv
 
@@ -20,6 +20,7 @@ def home():
 def contact():
     if request.method == "POST":
         # Get form data
+        print(request.form)
         name = request.form["name"]
         email = request.form["email"]
         message = request.form["message"]

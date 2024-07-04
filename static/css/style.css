@@ -37,6 +37,25 @@ body {
     color: #f2f2f2;
 }
 
+/* card */
+.card-img-top {
+    background-color: #4f4f4f;
+    object-fit: cover;
+}
+
+.card-body {
+    min-height: 450px;
+}
+
+.card-detail {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+}
+
 /* form */
 
 .contact .form-group {
@@ -186,7 +205,8 @@ ul {
 }
 
 /* button */
-.round-button button {
+.round-button button,
+.round-button input {
     width: 200px;
     height: 40px;
     border-radius: 50px;
